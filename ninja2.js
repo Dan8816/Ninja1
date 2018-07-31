@@ -23,8 +23,28 @@ class Ninja
 }
 Ninja.prototype.punch = function(OtherNinja)
 {
-    OtherNinja.health -= 5;
-    console.log(OtherNinja.health);
+    if ((OtherNinja instanceof Ninja)==true)
+    {
+        OtherNinja.health -= 5;
+        console.log(OtherNinja.health);
+    }
+    else
+    {
+        console.log("not a ninja");
+    }
+}
+Ninja.prototype.kick = function(OtherNinja)
+{
+    if ((OtherNinja instanceof Ninja)==true)
+    {
+        var damage = this.strength*15;
+        OtherNinja.health -= damage;
+        console.log(OtherNinja.health);
+    }
+    else
+    {
+        console.log("not a ninja");
+    }
 }
 var ninja1 = new Ninja("Hyabusa");
 ninja1.sayName();
